@@ -1,5 +1,7 @@
 # Creative Writing Skills
 
+> **Fork note.** This is Andrew Kim's fork of [haowjy/creative-writing-skills](https://github.com/haowjy/creative-writing-skills) (Apache-2.0, by Jimmy Yao), adjusted to run first as a Claude Code plugin. Projects get a `CLAUDE.md` instead of an `AGENTS.md`, the marketplace installs from this fork, and a hook checks kb links. See `CLAUDE.md` and `CHANGELOG.md` for the full list of changes.
+
 [![CI](https://github.com/haowjy/creative-writing-skills/actions/workflows/ci.yml/badge.svg)](https://github.com/haowjy/creative-writing-skills/actions/workflows/ci.yml)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
 
@@ -22,7 +24,7 @@ Write novels, short stories, and serial fiction with AI that keeps your voice, t
    | Claude Code / Cowork | `/creative-writing-skills:project-setup` |
    | Codex, Cursor, OpenCode, Grok | the `project-setup` skill |
 
-   It interviews you about the project, collects writing samples, and creates your `AGENTS.md` (the project's conventions), the `kb/` knowledge base layout and your first style files. Everything muse does reads those, so skipping this step makes it guess your conventions.
+   It interviews you about the project, collects writing samples, and creates your `CLAUDE.md` (the project's conventions), the `kb/` knowledge base layout and your first style files. Everything muse does reads those, so skipping this step makes it guess your conventions.
 3. **Start writing with muse**: turn on `creative-writing-muse` (Claude.ai, Cowork, Codex, OpenCode), or start the `muse` agent (`claude --agent creative-writing-skills:muse` in Claude Code; choose `muse` as the agent in Cursor and Grok).
 
 ## Installation
@@ -33,14 +35,14 @@ Write novels, short stories, and serial fiction with AI that keeps your voice, t
 
 First, add the skills to claude.ai. Pick one:
 
-- **Add the marketplace (easiest):** in the sidebar, **Customize** → **Personal plugins** → **+** → **Create plugins** → **Add marketplace** → **Add from repository**, enter `haowjy/creative-writing-skills`, and click **Sync**.
+- **Add the marketplace (easiest):** in the sidebar, **Customize** → **Personal plugins** → **+** → **Create plugins** → **Add marketplace** → **Add from repository**, enter `AndrewDataKim/creative-writing-skills`, and click **Sync**.
 
   ![Adding the marketplace in claude.ai: the plugins icon and + in the sidebar, with the repository entered in the Add marketplace dialog](docs/images/claudeai-add-marketplace.png)
-- **Upload the files:** download the `.skill` files from the [latest release](https://github.com/haowjy/creative-writing-skills/releases/latest), then **Customize** → **Skills** → **"+"** → **Upload skill** for each one.
+- **Upload the files:** download the `.skill` files from the [latest release](https://github.com/AndrewDataKim/creative-writing-skills/releases/latest), then **Customize** → **Skills** → **"+"** → **Upload skill** for each one.
 
 Then start a chat, turn on **`creative-writing-muse`**, and describe what you want to write; it leads from there. Adding skills one at a time instead? Start with **creative-writing-muse** and **story-workflow**, which holds muse's method, then **writing-principles**, **creative-writing-craft**, **story-planning**, **story-review**, and **story-memory**.
 
-Run **`project-setup`** once before writing. On claude.ai it gives you the `AGENTS.md`, kb layout, and style guidance as text to save in your project.
+Run **`project-setup`** once before writing. On claude.ai it gives you the `CLAUDE.md`, kb layout, and style guidance as text to save in your project.
 
 The plugin's agents show up grayed out in a claude.ai chat: chat runs skills only, so muse runs every pass itself, in one conversation.
 
@@ -53,13 +55,13 @@ Claude Code and Cowork use the same plugin, and both run the agents.
 **Claude Code**: add the marketplace and install:
 
 ```bash
-/plugin marketplace add haowjy/creative-writing-skills
+/plugin marketplace add AndrewDataKim/creative-writing-skills
 /plugin install creative-writing-skills@creative-writing-skills
 ```
 
-**Cowork**: in the sidebar, **Customize** → **Personal plugins** → **+** → **Create plugins** → **Add marketplace** → **Add from repository**, enter `haowjy/creative-writing-skills`, then install the **creative-writing-skills** plugin.
+**Cowork**: in the sidebar, **Customize** → **Personal plugins** → **+** → **Create plugins** → **Add marketplace** → **Add from repository**, enter `AndrewDataKim/creative-writing-skills`, then install the **creative-writing-skills** plugin.
 
-Run the one-time project setup to create your `AGENTS.md`, `kb/` layout, and style files:
+Run the one-time project setup to create your `CLAUDE.md`, `kb/` layout, and style files:
 
 ```
 /creative-writing-skills:project-setup
@@ -173,7 +175,7 @@ Four general-purpose helpers ship with them for the work around the writing: `ex
 | **character-sim** | In-character conversation for voice and relationship testing |
 | **creative-research** | Research for factual grounding: historical detail, cultural texture, domain accuracy, how other authors handled similar material |
 | **writing-staffing** | Which agent takes which lane, what to tell it to load, and how many lanes to run (only where agents run) |
-| **project-setup** | One-time guided setup (you start it): interviews you, then creates `AGENTS.md`, the kb layout, and style files |
+| **project-setup** | One-time guided setup (you start it): interviews you, then creates `CLAUDE.md`, the kb layout, and style files |
 | **llm-writing** | Plain words and reader-first discipline for notes, briefs and reports; strips default LLM phrasing |
 | **shared-dao** | Shared vocabulary: canonical story terms, aliases, and ambiguity resolution |
 
@@ -183,7 +185,7 @@ The plugin also ships general skills these load, for keeping the project's notes
 
 ```text
 my-story/
-├── AGENTS.md              # Project conventions (created by project-setup)
+├── CLAUDE.md              # Project conventions (created by project-setup)
 ├── story/                 # Chapters and manuscript
 ├── work/                  # Current drafting effort
 │   ├── outline/
@@ -221,7 +223,7 @@ Then run `meridian` in the project directory: the session runs as muse, and a ne
 
 ## Development
 
-`plugin/`, the marketplace catalogs and the root `package.json` are generated by Mars from `agents/`, `skills/`, `bootstrap/` and the dependency graph, and CI fails when they are stale. The commands, release steps and rules for changing this package are in [AGENTS.md](AGENTS.md).
+`plugin/`, the marketplace catalogs and the root `package.json` are generated by Mars from `agents/`, `skills/`, `bootstrap/` and the dependency graph, and CI fails when they are stale. The commands, release steps and rules for changing this package are in [CLAUDE.md](CLAUDE.md).
 
 ## License
 

@@ -16,7 +16,7 @@ Talk through the story, plan it, and draft and revise the prose yourself: a
 conversation, plan, or passage you can hold in your head costs less to do
 than to brief.
 
-A project without an `AGENTS.md` and a `kb/` knowledge base has not been set
+A project without a `CLAUDE.md` (or an older `AGENTS.md`) and a `kb/` knowledge base has not been set
 up: suggest the author run `/project-setup` once before the first chapter. It
 interviews them and writes the conventions, kb layout, and style files later
 sessions read.

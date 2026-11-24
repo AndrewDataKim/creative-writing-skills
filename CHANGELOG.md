@@ -2,6 +2,15 @@
 
 ## [Unreleased]
 
+### Changed (fork: AndrewDataKim)
+- Writing projects get `CLAUDE.md` from project-setup instead of `AGENTS.md`; skills and agents read `CLAUDE.md` first and fall back to an older `AGENTS.md`.
+- Repo guide moved to `CLAUDE.md`; `AGENTS.md` now points to it.
+- Marketplace installs this fork's `plugin/claude` instead of upstream's tagged release; install docs name the fork.
+
+### Added (fork: AndrewDataKim)
+- `PostToolUse` hook that reports broken relative links in edited `kb/` pages.
+- `docs/kb-typed-edges.md`: proposal for typed, weighted relations between kb pages.
+
 ## [0.9.11] - 2026-11-22
 
 - Name agents without @; check_refs checks skills only; bundle meridian-base 0.18.1

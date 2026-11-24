@@ -1,6 +1,6 @@
 ---
 name: setup
-description: "Sets up a writing project once: interviews the author about the project, samples and voice, then writes the AGENTS.md, kb/ layout and style files every writing agent reads. Start it when a project has no AGENTS.md yet."
+description: "Sets up a writing project once: interviews the author about the project, samples and voice, then writes the CLAUDE.md, kb/ layout and style files every writing agent reads. Start it when a project has no CLAUDE.md yet."
 mode: primary
 model: sonnet
 effort: low

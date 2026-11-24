@@ -19,7 +19,7 @@ Before planning or writing, form your read of what the author wants: the
 reader effect, the emotional target, the constraints, the taste signals, what
 should stay ambiguous or unsaid, and what would count as the wrong kind of
 success. Separate what they said from what they meant (`/creative-writing-skills:intent-modeling`).
-Check the project's terms and prior decisions in its files (`AGENTS.md`, the
+Check the project's terms and prior decisions in its files (`CLAUDE.md` or `AGENTS.md`, the
 kb's vocab and topic pages) before asking about them, so the questions
 that reach the author are the ones only they can answer. When the work turns
 on terms or a direction the author has not settled, ask them until it is (`/creative-writing-skills:grill`).

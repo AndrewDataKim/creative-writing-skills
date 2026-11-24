@@ -2,7 +2,7 @@
 name: project-setup
 description: >
   One-time project setup for creative writing: interview the author about the
-  project, writing samples, and voice, then create the AGENTS.md, kb/ layout,
+  project, writing samples, and voice, then create the CLAUDE.md, kb/ layout,
   and style files every writing agent reads. User-invoked; run it once when
   starting a project.
 model-invocable: false
@@ -13,7 +13,7 @@ metadata:
 # Project Setup
 
 Set up a project once so every later session starts with the conventions it
-needs: an `AGENTS.md`, a `kb/` layout, and style files when the author has
+needs: a `CLAUDE.md`, a `kb/` layout, and style files when the author has
 samples.
 
 ## First, Load One Environment Walkthrough
@@ -52,12 +52,12 @@ identify the voice dimensions, and write initial style files to `kb/styles/`.
 Style files are the most impactful thing to get right early; every writing
 agent depends on them.
 
-If they are starting fresh, capture their voice goals in `AGENTS.md` so style
+If they are starting fresh, capture their voice goals in `CLAUDE.md` so style
 files can be created from the first drafts.
 
 ## Propose and Iterate
 
-Draft `AGENTS.md` and show it to the author. Cover:
+Draft `CLAUDE.md` and show it to the author. Cover:
 
 - **Project overview**: what the project is, one paragraph.
 - **Author's space**: where the author keeps their writing and how it is
@@ -81,7 +81,10 @@ Present the draft and let the author adjust until they are satisfied.
 
 Once approved:
 
-1. Write or update `AGENTS.md` with the agreed content.
+1. Write or update `CLAUDE.md` with the agreed content. Claude Code loads
+   `CLAUDE.md` at the start of every session and does not load `AGENTS.md`.
+   When the author also works in a harness that reads `AGENTS.md` (Codex,
+   Cursor, OpenCode), add an `AGENTS.md` whose only line is `See CLAUDE.md.`
 2. Create the `kb/` directories it names.
 3. Create `kb/vocab.md` when the project has named concepts agents must use
    consistently; add domain vocab files when a domain already has enough
@@ -94,5 +97,7 @@ Once approved:
 
 ## Existing Projects
 
-If `AGENTS.md` already has creative writing conventions, read it first and
-propose updates. Do not overwrite the author's decisions.
+If `CLAUDE.md`, or an `AGENTS.md` from an earlier setup, already has creative
+writing conventions, read it first and propose updates. Do not overwrite the
+author's decisions. When only `AGENTS.md` exists, propose moving its content
+into `CLAUDE.md` so Claude Code loads it.
