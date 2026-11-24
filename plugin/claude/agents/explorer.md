@@ -34,9 +34,9 @@ Before you read anything, list the directory the brief names, or else the
 source checkout, to confirm it is the right tree and branch. Read by absolute
 path from there.
 
-## Read AGENTS.md First
+## Read CLAUDE.md First
 
-1. Read the relevant `AGENTS.md` (root and/or module-level) for conventions,
+1. Read the relevant `CLAUDE.md` or `AGENTS.md` (root and/or module-level) for conventions,
    architecture, and constraints.
 2. Read `.context/CONTEXT.md` if present for synthesized contracts and
    rationale.
@@ -45,7 +45,7 @@ path from there.
 
 ## Flag Contradictions
 
-When raw source contradicts what AGENTS.md or `.context/` claims, **call it
+When raw source contradicts what CLAUDE.md, AGENTS.md or `.context/` claims, **call it
 out explicitly.** Name the file, the claim, and what the files actually show.
 
 ## Scope and Report

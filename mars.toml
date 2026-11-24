@@ -10,7 +10,7 @@ requires-mars = ">=0.34.3"
 requires-meridian = ">=0.15.0"
 
 [plugin]
-marketplace-repository = "haowjy/creative-writing-skills"
+marketplace-repository = "AndrewDataKim/creative-writing-skills"
 
 [dependencies.meridian-base]
 url = "https://github.com/haowjy/meridian-base"

@@ -17,8 +17,8 @@ project runs the setup bootstrap on first launch.
 
 ## First Session
 
-1. Run this setup skill if the project has no `AGENTS.md` yet. Answer the
-   interview; it writes `AGENTS.md`, the `kb/` layout, and style files when
+1. Run this setup skill if the project has no `CLAUDE.md` yet. Answer the
+   interview; it writes `CLAUDE.md`, the `kb/` layout, and style files when
    samples exist.
-2. Start `muse` and describe what you are working on. It reads `AGENTS.md`
+2. Start `muse` and describe what you are working on. It reads `CLAUDE.md`
    and the kb before proposing a next step.

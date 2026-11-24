@@ -18,7 +18,11 @@ expect() { # label actual
 expect package.json "$(jq -r .version package.json)" "$v"
 expect plugin/claude/.claude-plugin/plugin.json "$(jq -r .version plugin/claude/.claude-plugin/plugin.json)" "$v"
 expect plugin/.mars-plugin.json "$(jq -r .version plugin/.mars-plugin.json)" "$v"
-expect "marketplace.json ref" "$(jq -r '.plugins[0].source.ref' .claude-plugin/marketplace.json)" "v$v"
+# This fork's marketplace installs from its own tree (a relative path), so only a
+# git-subdir source carries a release ref to check.
+if [ "$(jq -r '.plugins[0].source | type' .claude-plugin/marketplace.json)" = object ]; then
+  expect "marketplace.json ref" "$(jq -r '.plugins[0].source.ref' .claude-plugin/marketplace.json)" "v$v"
+fi
 
 awk -v h="## [$v]" '
   index($0, h) == 1 { on = 1; next }
